@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<title>Testipainike</title>
+</head>
+<body>
+
+<h2>Satunnaislukugeneraattori</h2>
+
+<button onclick="naytaNumero()">Anna satunnainen numero</button>
+
+<p id="tulos"></p>
+
+<script>
+function naytaNumero() {
+    const numero = Math.floor(Math.random() * 100) + 1;
+    document.getElementById("tulos").innerText = "Satunnainen numero: " + numero;
+}
+</script>
+
+</body>
+</html>
