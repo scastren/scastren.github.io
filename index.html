@@ -1,38 +1,30 @@
-
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yksinkertainen WWW-sivu</title>
-    <style>
-        /* 
-        Käytetään yleistä web-fonttia Arial.
-        Tämä fontti on lähes kaikilla käyttöjärjestelmillä, joten se ei vaadi ulkoisia latauksia.
-        Jos Arial ei ole saatavilla, käytetään sans-serif varafonttia.
-        */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9; /* Kevyt taustaväri */
-            color: #333; /* Tumma tekstiväri */
-        }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PWA Demo</title>
 
-        h1 {
-            color: #0056b3; /* Sininen otsikko */
-        }
+    <link rel="stylesheet" href="style.css">
 
-        p {
-            line-height: 1.6; /* Parempi luettavuus */
-        }
-    </style>
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <!-- iOS-tuki -->
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
 </head>
 <body>
-    <!-- Sivun pääotsikko -->
-    <h1>Tervetuloa yksinkertaiselle sivulle</h1>
+    <div class="box">
+        <h1>Hello World!</h1>
+        <p>This is a minimal PWA demo.</p>
+    </div>
 
-    <!-- Esimerkkiteksti -->
-    <p>Tämä on yksinkertainen HTML-sivu, jossa käytetään Arial-fonttia CSS:n avulla. 
-    Sivulla on kevyt taustaväri ja selkeä typografia.</p>
+    <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/service-worker.js");
+    }
+    </script>
 </body>
 </html>
